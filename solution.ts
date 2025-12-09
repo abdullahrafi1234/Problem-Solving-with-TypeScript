@@ -38,12 +38,12 @@ const person2 = new Person("Alice", 25);
 
 // Problem-4
 
-type Book = {
+type Books = {
   title: string;
   rating: number;
 }[];
 
-const filterByRating = (books: Book): Book => {
+const filterByRating = (books: Books): Books => {
   const booksValue = books.filter((book) => {
     return book.rating >= 4;
   });
@@ -78,3 +78,43 @@ const users = [
 ];
 
 // Problem-6
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+const printBookDetails = (book: Book): string => {
+  if (book.isAvailable === true) {
+    return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: Yes`;
+  } else {
+    return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: No`;
+  }
+};
+
+const myBook: Book = {
+  title: "The Great Gatsby",
+  author: "F. Scott Fitzgerald",
+  publishedYear: 1925,
+  isAvailable: true,
+};
+
+// Problem-7
+
+const getUniqueValues = (array1: number[], array2: number[]): number[] => {
+  const combinedList: number[] = [...array1, ...array2];
+
+  const uniqueList: number[] = [];
+
+  for (const list of combinedList) {
+    if (!uniqueList.includes(list)) {
+      uniqueList.push(list);
+    }
+  }
+
+  return uniqueList;
+};
+
+// problem - 8

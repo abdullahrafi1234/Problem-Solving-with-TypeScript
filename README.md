@@ -15,7 +15,8 @@ type PersonKeys = keyof Person;
 
 ## 3. Explain the difference between any, unknown, and never types in TypeScript.
 
-Any Type:
+### Any Type:
+
 `any` হলো TypeScript-এর সবচেয়ে “ফ্রি” টাইপ। এটা বলে দেয় যে এই ভ্যারিয়েবলের কোনো নির্দিষ্ট টাইপ নেই – এটা যেকোনো কিছু হতে পারে এবং এর ওপর যেকোনো অপারেশন করা যাবে।  
 TypeScript এই টাইপ দেখলে পুরোপুরি টাইপ চেকিং বন্ধ করে দেয়।
 

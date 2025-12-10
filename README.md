@@ -10,5 +10,5 @@ type Person = {
 };
 
 type PersonKeys = keyof Person;
-// "name" | "age" | "address"
+// Output => "name" | "age" | "address"
 ```

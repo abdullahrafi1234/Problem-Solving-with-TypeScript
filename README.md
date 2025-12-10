@@ -1,5 +1,7 @@
 ## 2. What is the use of the keyof keyword in TypeScript? Provide an example.
 
+### Keyof:
+
 `keyof` একটা টাইপ অপারেটর যেটা কোনো অবজেক্ট টাইপের সব প্রপার্টি নাম (keys) নিয়ে একটা ইউনিয়ন টাইপ তৈরি করে।
 
 ```ts
@@ -31,7 +33,8 @@ value.toUpperCase(); // কোনো এরর নেই
 value.length(); // কোনো এরর নেই
 ```
 
-Unknown Type:
+### Unknown Type:
+
 `unknown` হলো এটাও যেকোনো মান ধরতে পারে, কিন্তু এটার ওপর কোনো অপারেশন করা যায়না যতক্ষণ না এটা প্রমাণীত হয় যে এটা আসলে কী টাইপ।
 
 ```ts
@@ -48,7 +51,8 @@ if (typeof userInput === "number") {
 }
 ```
 
-Never Type:
+### Never Type:
+
 `never` মানে “এই টাইপের কোনো মান কখনো থাকতে পারে না”। এটা প্রধানত ব্যবহৃত হয় ফাংশন যেটা কখনো স্বাভাবিকভাবে রিটার্ন করে না তার ক্ষেত্রে।
 
 ```ts
@@ -59,6 +63,8 @@ fail("Error 404");
 ```
 
 ## 4. What is the use of enums in TypeScript? Provide an example of a numeric and string enum.
+
+### Enum:
 
 `Enums` ব্যবহার করে একটি set এর named constants define করা যায়। এটি একটি `type` হিসেবে কাজ করে। TypeScript এ numeric এবং string enum উভয়ই আছে।
 
@@ -83,7 +89,9 @@ console.log(current); // "APPROVED"
 
 ## 5. Provide an example of using union and intersection types in TypeScript.
 
-ইউনিয়ন টাইপ: এটি এমন একটি Operator যেখানে একটি ভ্যালু একাধিক টাইপের মধ্যে যেকোনো একটি হতে পারে। এটি (|) অপারেটর দ্বারা চিহ্নিত করা হয়।
+### Union Type:
+
+এটি এমন একটি Operator যেখানে একটি ভ্যালু একাধিক টাইপের মধ্যে যেকোনো একটি হতে পারে। এটি (|) অপারেটর দ্বারা চিহ্নিত করা হয়।
 
 ```ts
 type StringOrNumber = string | number;
@@ -94,7 +102,9 @@ id = 456;
 // id = true; //এইটা পসিবল না
 ```
 
-ইন্টারসেকশন টাইপ: একাধিক টাইপকে একত্রিত করে একটি নতুন টাইপ তৈরি করে যেখানে সেই নতুন টাইপে সমস্ত বিদ্যমান টাইপের বৈশিষ্ট্য থাকতে হবে। এটি (&) অপারেটর দ্বারা চিহ্নিত করা হয়।
+### Intersection Type:
+
+এটি একাধিক টাইপকে একত্রিত করে একটি নতুন টাইপ তৈরি করে যেখানে সেই নতুন টাইপে সমস্ত বিদ্যমান টাইপের বৈশিষ্ট্য থাকতে হবে। এটি (&) অপারেটর দ্বারা চিহ্নিত করা হয়।
 
 ```ts
 interface Employee {

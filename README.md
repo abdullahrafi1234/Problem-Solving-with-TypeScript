@@ -1,4 +1,4 @@
-## ২. `keyof` কী কাজ করে?
+## 2. What is the use of the keyof keyword in TypeScript? Provide an example.
 
 `keyof` একটা টাইপ অপারেটর যেটা কোনো অবজেক্ট টাইপের সব প্রপার্টি নাম (keys) নিয়ে একটা ইউনিয়ন টাইপ তৈরি করে।
 

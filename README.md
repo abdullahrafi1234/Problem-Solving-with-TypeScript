@@ -1,3 +1,29 @@
+## 1. What are some differences between interfaces and types in TypeScript?
+
+### Interface:
+
+বিশেষভাবে অবজেক্টের স্ট্রাকচার ডিফাইন করার জন্য এটি ব্যবহার হয়। Interface extends interface → সহজ ও স্পষ্টভাবে কাজ করে।
+
+```ts
+interface User {
+  name: string;
+  age: number;
+}
+const user: User = { name: "Rafi", age: 25 };
+```
+
+### Types:
+
+যেকোনো টাইপ (union, primitive, tuple, function) ডিফাইন করতে ব্যবহৃত হয়। Type Alias extends করতে পারে intersection (&) দিয়ে।
+
+```ts
+type UserType = {
+  name: string;
+  age: number;
+};
+const user: UserType = { name: "Rafi", age: 25 };
+```
+
 ## 2. What is the use of the keyof keyword in TypeScript? Provide an example.
 
 ### Keyof:

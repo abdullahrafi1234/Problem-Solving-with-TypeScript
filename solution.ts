@@ -32,29 +32,19 @@ class Person {
     return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
-
-const person1 = new Person("John Doe", 30);
-const person2 = new Person("Alice", 25);
-
 // Problem-4
 
 type Books = {
   title: string;
   rating: number;
-}[];
+};
 
-const filterByRating = (books: Books): Books => {
+const filterByRating = (books: Books[]): Books[] => {
   const booksValue = books.filter((book) => {
     return book.rating >= 4;
   });
   return booksValue;
 };
-
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
-];
 
 // Problem-5
 
@@ -63,19 +53,13 @@ type User = {
   name: string;
   email: string;
   isActive: boolean;
-}[];
+};
 
-const filterActiveUsers = (users: User): User => {
+const filterActiveUsers = (users: User[]): User[] => {
   return users.filter((user) => {
     return user.isActive;
   });
 };
-
-const users = [
-  { id: 1, name: "Rakib", email: "rakib@example.com", isActive: true },
-  { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
-  { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
-];
 
 // Problem-6
 
@@ -92,13 +76,6 @@ const printBookDetails = (book: Book): string => {
   } else {
     return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: No`;
   }
-};
-
-const myBook: Book = {
-  title: "The Great Gatsby",
-  author: "F. Scott Fitzgerald",
-  publishedYear: 1925,
-  isAvailable: true,
 };
 
 // Problem-7
@@ -118,3 +95,31 @@ const getUniqueValues = (array1: number[], array2: number[]): number[] => {
 };
 
 // problem - 8
+type Products = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+const calculateTotalPrice = (products: Products[]): number => {
+  const totalPrice = products.reduce((preValue, CrrValue) => {
+    const total = CrrValue.price * CrrValue.quantity;
+
+    const discountPrice = CrrValue.discount
+      ? total - (total * CrrValue.discount) / 100
+      : total;
+
+    return preValue + discountPrice;
+  }, 0);
+
+  return totalPrice;
+};
+
+const products = [
+  { name: "Pen", price: 10, quantity: 2 },
+  { name: "Notebook", price: 25, quantity: 3, discount: 10 },
+  { name: "Bag", price: 50, quantity: 1, discount: 20 },
+];
+
+console.log(calculateTotalPrice(products));
